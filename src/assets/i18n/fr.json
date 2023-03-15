@@ -1,0 +1,15 @@
+{
+    "FirstName":"prénom",
+    "LastName":"nom de famille",
+    "Enter FirstName":"Entrez votre prénom",
+    "FirstName is required":"Prénom est requis",
+    "First Name should start uppercase followed by 5-10 lowercase character (eg:Nithiya)":"Première Le nom doit commencer en majuscule suivi de 5 à 10 caractères minuscules (par exemple : Nithiya)",
+    "Enter LastName":"Entrer le nom de famille",
+    "LastName is required":"Nom de famille est requis",
+    "LastName should start uppercase followed by 5-10 lowercase character (eg:Mani)":"Nom de famille doit commencer en majuscule suivi de 5 à 10 caractères minuscules (par exemple : Mani)",
+    "Add Skill":"Ajouter une compétence",
+    "Skill":"Compétence",
+    "Sign up":"S'inscrire",
+    "French":"Français",
+    "English":"Anglaise"
+}

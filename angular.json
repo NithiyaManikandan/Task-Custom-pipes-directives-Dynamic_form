@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "aot": true,
             "outputPath": "dist/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,6 +35,12 @@
             "scripts": []
           },
           "configurations": {
+            "en-US": {
+              "localize": ["en-US"]
+            },
+            "fr": {
+              "localize": ["fr"]
+            } ,
             "production": {
               "budgets": [
                 {
@@ -73,6 +81,12 @@
             },
             "development": {
               "browserTarget": "demo:build:development"
+            },
+            "en-US": {
+              "browserTarget": "demo:build:en-US"
+            },
+            "fr": {
+              "browserTarget": "demo:build:fr"
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +117,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f47c5750-3c72-4dbd-b29f-8555dedd2b71"
   }
 }

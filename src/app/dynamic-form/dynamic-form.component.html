@@ -1,0 +1,55 @@
+<div class="d-flex justify-content-center align-item-center w-50  border border-dark m-5 pb-5 g-3">
+    <form class="row m-6 p-5" [formGroup]="dynamicForm" (ngSubmit)="onSubmit(dynamicForm.value)">
+        <div class="row mb-4">
+            <div class="row mb-3">
+                <div class="col-10 ">
+                    <div class="col-3 ">
+                        <select class="custom-select p-1 m-2 bg-secondary text-white" (change)="changeLanguage($event)">
+                            <option value="en" [selected]="lang == 'en'" >{{'English'|translate}}</option>
+                            <option value="fr" [selected]="lang == 'fr'">{{'French'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label fs-4" for="form3Example1">{{ 'FirstName' | translate }}</label>
+                    <input type="text" id="form3Example2" class="form-control" placeholder="{{'Enter FirstName'  | translate}}"
+                        formControlName="firstName" />
+                    <small class="text-danger"
+                        *ngIf="dynamicForm.controls['firstName'].hasError('required') && dynamicForm.controls['firstName'].touched">{{'FirstName
+                        is required' | translate}}</small>
+                    <small class="text-danger"
+                        *ngIf="dynamicForm.controls['firstName'].hasError('isFirstNameError') && dynamicForm.controls['firstName'].dirty && dynamicForm.controls['firstName'].value">{{'First
+                        Name should start uppercase followed by 5-10 lowercase character (eg:Nithiya)' | translate}}</small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label fs-4" for="form3Example2">{{ 'LastName' | translate }}</label>
+                    <input type="text" id="form3Example2" class="form-control w-100" placeholder="{{'Enter LastName'|translate}}"
+                        formControlName="lastName" />
+                    <small class="text-danger"
+                        *ngIf="dynamicForm.controls['lastName'].hasError('required') && dynamicForm.controls['lastName'].touched">{{'LastName
+                        is required'|translate}}</small>
+
+                    <small class="text-danger"
+                        *ngIf="dynamicForm.controls['lastName'].hasError('isLastNameError') && dynamicForm.controls['lastName'].dirty && dynamicForm.controls['lastName'].value">{{'LastName
+                        should start uppercase followed by 5-10 lowercase character (eg:Mani)'|translate}}</small>
+                </div>
+            </div>
+            <div formArrayName="skill">
+                <button type="button" (click)="addSkill()" class="btn btn-secondary m-4" >{{'Add Skill'|translate}}</button>
+                <div *ngFor="let s of skill.controls; let i =index" class="mb-3">
+                    <label for="s-{{i}}">{{'Skill'|translate}}&nbsp;</label>
+                    <input id="s-{{i}}" type="text" class="form-control w-100" [formControlName]="i"/>
+                    <!-- <small class="text-danger"
+                        *ngIf="(!this.dynamicForm.controls['skill'].value[0]) && this.dynamicForm.controls['skill'].touched">
+                        Atleat one skill is required</small> -->
+                </div>
+            </div>
+        </div>
+        <!-- {{dynamicForm.status}} -->
+        <button type="submit" [disabled]="dynamicForm.invalid" class="btn btn-primary btn-block mb-4">{{'Sign up'|translate}}</button>
+    </form>
+</div>

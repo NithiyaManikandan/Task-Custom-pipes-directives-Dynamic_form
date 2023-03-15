@@ -1,0 +1,15 @@
+{
+    "FirstName":"FirstName",
+    "LastName":"LastName",
+    "Enter FirstName":"Enter FirstName",
+    "FirstName is required":"FirstName is required",
+    "First Name should start uppercase followed by 5-10 lowercase character (eg:Nithiya)":"First Name should start uppercase followed by 5-10 lowercase character (eg:Nithiya)",
+    "Enter LastName":"Enter LastName",
+    "LastName is required":"LastName is required",
+    "LastName should start uppercase followed by 5-10 lowercase character (eg:Mani)":"LastName should start uppercase followed by 5-10 lowercase character (eg:Mani)",
+    "Add Skill":"Add Skill",
+    "Skill":"Skill",
+    "Sign up":"Sign up",
+    "English":"English",
+    "French":"French"
+}

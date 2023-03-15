@@ -1,0 +1,17 @@
+<form #userForm="ngForm">
+    <div>
+        <label class="form-label" for="loginName">Max</label>
+        <input type="number" id="loginName" #email="ngModel" name="email"  size="50" class="form-control" [(ngModel)]="userModel.email" (input)="checkPattern(email)"/>
+        <!-- <small class="text-danger" *ngIf="email.errors?.['error']">Invalid Email</small> -->
+    </div>
+
+    <div>
+        <label class="form-label" for="loginPassword">Min</label>
+        <input type="number" id="loginPassword" #password="ngModel" size="50" class="form-control" name="password" [(ngModel)]="userModel.password"  (input)="checkControl(password)"/>
+        <!-- <small class="text-danger" *ngIf="password.errors?.['error']">Max length exceded</small> -->
+    </div>
+
+
+    <button type="submit"  size="10" [disabled]="userForm.invalid" style="background-color:green;color: white;margin-left: 300px;" 
+        class="btn mb-4" (click)="formSubmit(userForm.value)">Sign in</button>
+</form>
